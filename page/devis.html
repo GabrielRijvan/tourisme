@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mada Entdeckung - Demande de Devis</title>
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- CSS Spécifique Devis -->
+    <link rel="stylesheet" href="../css/devis.css">
+</head>
+<body>
+
+    <!-- ================= HEADER & NAVIGATION ================= -->
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logo/logo.png" alt="Mada Entdeckung Logo">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="destination.html">Destinations</a></li>
+                <li><a href="hebergement.html">Hébergements</a></li>
+                <li><a href="activite.html">Activités</a></li>
+                <li><a href="circuit.html">Circuits</a></li>
+                <li><a href="restaurant.html">Restaurants</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="devis-container">
+        <section class="devis-card">
+            <h2>Demande de Devis Sur-Mesure</h2>
+            <p class="devis-intro">Remplissez ce formulaire pour recevoir une proposition de séjour personnalisée pour votre voyage à Madagascar.</p>
+
+            <!-- FORMULAIRE FORMSUBMIT -->
+            <form target="_blank" action="https://formsubmit.co/rijvangabriel@gmail.com" method="POST" class="devis-form">
+                
+                <!-- Options de configuration FormSubmit -->
+                <input type="hidden" name="_subject" value="Nouvelle demande de devis - Mada Entdeckung">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirection vers devisrecu.html après validation -->
+                <!-- <input type="hidden" name="_next" value="https://ton-domaine.com/page/devisrecu.html"> -->
+                 <input type="hidden" name="_next" value="http://127.0.0.1:5500/page/devisrecu.html">
+
+                <!-- SECTION 1 : COORDONNÉES -->
+                <fieldset class="form-section">
+                    <legend>1. Vos Coordonnées</legend>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="nom">Nom complet *</label>
+                            <input type="text" id="nom" name="nom" placeholder="Ex: Jean Dupont" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse e-mail *</label>
+                            <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone / WhatsApp *</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="Ex: +33 6 12 34 56 78" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pays">Pays de résidence</label>
+                            <input type="text" id="pays" name="pays" placeholder="Ex: France, Suisse, Canada...">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- SECTION 2 : DÉTAILS DU VOYAGE -->
+                <fieldset class="form-section">
+                    <legend>2. Votre Projet de Voyage</legend>
+                    
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="date-arrivee">Date d'arrivée souhaitée</label>
+                            <input type="date" id="date-arrivee" name="date_arrivee">
+                        </div>
+                        <div class="form-group">
+                            <label for="duree">Durée estimée (en jours)</label>
+                            <input type="number" id="duree" name="duree_jours" min="1" placeholder="Ex: 14">
+                        </div>
+                    </div>
+
+                    <!-- AJOUT : NOMBRE D'ADULTES ET ENFANTS -->
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="adultes">Nombre d'adultes *</label>
+                            <input type="number" id="adultes" name="nb_adultes" min="1" value="2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="enfants">Nombre d'enfants (-18 ans)</label>
+                            <input type="number" id="enfants" name="nb_enfants" min="0" value="0" placeholder="Ex: 2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age-enfants">Précisez l'âge des enfants (si applicable)</label>
+                        <input type="text" id="age-enfants" name="age_enfants" placeholder="Ex: 5 ans et 12 ans">
+                    </div>
+
+                    <div class="form-group checkbox-inline">
+                        <input type="checkbox" id="dates-flexibles" name="dates_flexibles" value="Oui">
+                        <label for="dates-flexibles">Mes dates de voyage sont flexibles</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Thématiques de voyage souhaitées (plusieurs choix possibles) :</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item"><input type="checkbox" name="thematique[]" value="Nature & Parcs"> Nature & Parcs Nationaux</label>
+                            <label class="checkbox-item"><input type="checkbox" name="thematique[]" value="Aventure & Rando"> Aventure & Randonnée</label>
+                            <label class="checkbox-item"><input type="checkbox" name="thematique[]" value="Séjour Balnéaire"> Plages & Détente Balnéaire</label>
+                            <label class="checkbox-item"><input type="checkbox" name="thematique[]" value="Culture & Gastronomie"> Culture & Gastronomie</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- SECTION 3 : BUDGET ET HÉBERGEMENT -->
+                <fieldset class="form-section">
+                    <legend>3. Préférences & Budget</legend>
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="hebergement">Gamme d'hébergement souhaitée</label>
+                            <select id="hebergement" name="gamme_hebergement">
+                                <option value="Non spécifié">-- Choisir une option --</option>
+                                <option value="Économique / chez l'habitant">Économique / Chez l'habitant</option>
+                                <option value="Standard (2-3 étoiles)">Standard (2 à 3 étoiles)</option>
+                                <option value="Haut de gamme (Lodges / 4-5 étoiles)">Haut de gamme (Lodges & Hôtels 4-5*)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget estimé par personne (hors vols intl.)</label>
+                            <select id="budget" name="budget_par_personne">
+                                <option value="Non spécifié">-- Sélectionner une tranche --</option>
+                                <option value="Moins de 1000 €">&lt; 1 000 €</option>
+                                <option value="1000 € à 2000 €">1 000 € - 2 000 €</option>
+                                <option value="2000 € à 3000 €">2 000 € - 3 000 €</option>
+                                <option value="Plus de 3000 €">&gt; 3 000 €</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Précisions ou demandes particulières</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Ex: Lieux à absolument visiter, contraintes alimentaires, voyage de noces..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- BOUTON D'ENVOI -->
+                <div class="form-submit-container">
+                    <button type="submit" class="btn-main btn-submit">Envoyer ma demande de devis</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- BOUTON RETOUR ACCUEIL -->
+        <div class="center-btn" style="margin-top: 20px; margin-bottom: 30px;">
+            <a href="../index.html" class="btn-main">Retour à la page d'accueil</a>
+        </div>
+    </main>
+
+</body>
+</html>

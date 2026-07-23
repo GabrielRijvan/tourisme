@@ -1,0 +1,175 @@
+/* ==========================================================================
+   PAGE DEMANDE DE DEVIS
+   ========================================================================== */
+
+.devis-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Carte globale entourant le formulaire */
+.devis-card {
+    background-color: #f2f2f2;
+    border: 1px solid #d0d0d0;
+    border-radius: 16px;
+    padding: 35px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.devis-card h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.devis-intro {
+    text-align: center;
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* Sections du formulaire */
+.form-section {
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+}
+
+.form-section legend {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f07818; /* Orange thème Mada Entdeckung */
+    padding: 0 10px;
+}
+
+/* Grilles de disposition */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 20px;
+}
+
+.form-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 20px;
+}
+
+/* Groupes de champs (Label + Input) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+/* Style des Inputs, Selects et Textareas */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    background-color: #fcfcfc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #f07818;
+    box-shadow: 0 0 5px rgba(240, 120, 24, 0.3);
+    background-color: #ffffff;
+}
+
+/* Case à cocher unique en ligne (Dates flexibles) */
+.checkbox-inline {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-inline label {
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Grille de cases à cocher (Thématiques) */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+}
+
+.checkbox-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Conteneur et style du bouton de validation */
+.form-submit-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 12px 30px;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .devis-card {
+        padding: 20px 15px;
+    }
+
+    .form-grid-2,
+    .form-grid-3,
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,90 @@
+/* ==========================================================================
+   PAGE ACTIVITÉS
+   ========================================================================== */
+
+.activites-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Grand rectangle englobant */
+.activites-container {
+    background-color: #f2f2f2;
+    border: 1px solid #d0d0d0;
+    border-radius: 12px;
+    padding: 30px 25px;
+}
+
+.activites-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Grille à 3 colonnes */
+.activites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 25px;
+    margin-bottom: 35px;
+}
+
+.activite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Encadrement de l'image */
+.activite-image {
+    width: 100%;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activite-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.activite-item:hover .activite-image img {
+    transform: scale(1.04);
+}
+
+/* Étiquette bleue sous chaque photo */
+.activite-label {
+    background-color: #004fb6; /* Bleu intense comme sur le modèle */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 8px 20px;
+    border-radius: 12px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 800px) {
+    .activites-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .activites-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activite-image {
+        height: 200px;
+    }
+}
